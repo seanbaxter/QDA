@@ -61,8 +61,8 @@ Without the semicolon in #2, `tiktok_logger` would be assigned to the fourth ele
 Use of the semicolon signals the caller's intent to terminate the parameter pack. The next argument binds to the next parameter. 
 
 ```cpp
-template<typename... pack1_t, typename... pack2_t, typename... pack3_t>
-void get_3_pack(pack1_t... pack1, pack2_t... pack2, pack3_t... pack3);
+template<typename... pack1_t; typename... pack2_t; typename... pack3_t>
+void get_3_pack(pack1_t... pack1; pack2_t... pack2; pack3_t... pack3);
 
 get_3_pack(1, 2, 3; ; 4, 5); // pack1 = {1, 2, 3}. pack2 = { }. pack3 = {4, 5}.
 ```
